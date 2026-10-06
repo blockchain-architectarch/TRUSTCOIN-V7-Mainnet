@@ -26,8 +26,7 @@ A purchase after release #3 and before release #4 is M = 3.
 
 Full rules: [TRUSTCOIN_LOYALTY_REWARDS.md](TRUSTCOIN_LOYALTY_REWARDS.md).
 
-This table supersedes the old V6.2 table (72 months, step ≈0.1388). Every
-value below must be used as-is, with no rounding, when assembling the tree.
+Every value below must be used as-is, with no rounding, when assembling the tree.
 
 | Cycle | G | Cycle | G | Cycle | G |
 |:-:|:-:|:-:|:-:|:-:|:-:|
