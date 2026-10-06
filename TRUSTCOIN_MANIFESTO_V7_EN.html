@@ -189,6 +189,7 @@ strong { color: var(--text); font-weight: 500; }
     <div class="tag">04 — Tax & Panic Tax</div>
     <h2>0.5% on every transaction.<br>Panic costs more.</h2>
     <p>The base tax of <strong>0.5%</strong> splits equally: <strong>0.25% goes directly to the Fund</strong>, <strong>0.25% accumulates in TaxBridge</strong> — frozen until cycle 51, then distributed every 90 days. No transactional burn.</p>
+    <p>Transfers to or from exempt system addresses (the bridges, the Fund pools and the temporary launch pool) are not taxed. The list is public on-chain: <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">isExempt(address)</code>.</p>
     <p>When the oracle detects a price drop — <strong>Panic Tax</strong> activates. An additional tax on top of the base 0.5%:</p>
     <div class="mechanic">
       <div class="mechanic-row">
@@ -225,7 +226,7 @@ strong { color: var(--text); font-weight: 500; }
   <section class="section s5">
     <div class="tag">05 — The G-Coefficient</div>
     <h2>Time is the only asset<br>you cannot buy.</h2>
-    <p>Every holder receives a multiplier based on their entry date. Cycle 1 is ×10.00. Cycle 50 is ×0.20. The curve is linear, step −0.20 per cycle — no manipulation, no discretion.</p>
+    <p>Every coin carries the multiplier of the cycle in which it was bought. Cycle 1 is ×10.00. Cycle 50 is ×0.20. The curve is linear, step −0.20 per cycle — no manipulation, no discretion. A cycle is counted by on-chain <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">monthlyRelease()</code> calls, not by the calendar. Buy again later — each top-up gets the G of its own cycle.</p>
     <div class="mechanic">
       <div class="mechanic-row">
         <div class="m-label">Cycle 1</div>
@@ -254,12 +255,12 @@ strong { color: var(--text); font-weight: 500; }
     <div class="tag">06 — Cumulative Immutable Loyalty Vault</div>
     <h2>One snapshot. Cycle 50.<br>The vault opens forever.</h2>
     <p>Once cycle 50 completes, a single snapshot of all holders is taken. This moment is immutable forever. The Loyalty Vault contract is not deployed yet — it is planned, expected around 2030, once emission is complete.</p>
-    <p>TaxBridge unlocks. From cycle 51 onward — every 90 days, automatically, the accumulated pool distributes:</p>
+    <p>TaxBridge unlocks. From cycle 51 onward — every 90 days, callable by anyone, no permission needed — the accumulated pool distributes:</p>
     <div class="dist">
       <div class="dist-item">
         <span class="dist-pct">80%</span>
         <span class="dist-label">Holders</span>
-        <div class="dist-desc">Weighted by balance × G-coefficient. Minimum 1,000 TRUST.</div>
+        <div class="dist-desc">Weighted by Σ (coins × G of the cycle each was bought). Minimum 1,000 TRUST.</div>
       </div>
       <div class="dist-item">
         <span class="dist-pct">10%</span>
@@ -273,8 +274,9 @@ strong { color: var(--text); font-weight: 500; }
       </div>
     </div>
     <p>The Vault will store every holder's cumulative share via a single Merkle Root sealed at snapshot. Formula: <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">claimable = (totalReceived × shares[address] / totalShares) − claimed[address]</code></p>
-    <p>Didn't claim for 10 years? Everything accumulated is waiting. No expiration date. No sweep function. <strong>Mathematics does not forget.</strong></p>
-    <p>After <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">renounceOwnership()</code> — no one is in the system. Not the deployer. Not the Architect. Mathematics alone.</p>
+    <p>Claim — or simply check in with a zero-amount claim — at least once every 3 years. A wallet silent for 3 years forfeits its unclaimed rewards to the Charity Hub. <strong>Lost keys do not lock value forever — it goes to charity.</strong></p>
+    <p>Rewards are paid only in TRUST and claimed by the holder after a one-time KYC check. Full rules: <a href="TRUSTCOIN_LOYALTY_REWARDS.md">Loyalty Rewards</a>.</p>
+    <p>After <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">renounceOwnership()</code> — no one is in the system. Not the deployer. Not the Architect. Mathematics alone. The only remaining role is the KYC signer: it can confirm a claimant, never move or redirect funds.</p>
   </section>
 
   <div class="rule"></div>
@@ -339,12 +341,12 @@ strong { color: var(--text); font-weight: 500; }
           <strong style="color:#A03030">⚠️ At your own risk:</strong><br>
           Tangem — no screen, you sign blind. Not for long-term holding.<br>
           Ledger — closed source, known security incident. Use with caution.<br><br>
-          <span style="color:var(--text-dim);font-size:14px">After the cap unlocks — your choice. We pay to the wallet that holds the tokens. Always.</span>
+          <span style="color:var(--text-dim);font-size:14px">After the cap unlocks — your choice. Rewards go only to the wallet that holds the tokens. Always.</span>
         </div>
       </div>
       <div class="mechanic-row">
         <div class="m-label">Price Floor</div>
-        <div class="m-value">$0.05 — wall on Uniswap. Only grows. Never shrinks.</div>
+        <div class="m-value">$0.05 — starting reference floor, backed by Fund liquidity. No price target is published.</div>
       </div>
     </div>
     <div class="warning">
