@@ -14,6 +14,7 @@ This document explains how TRUSTCOIN loyalty rewards work: who qualifies, how yo
 - At month 50 your **share is fixed forever**: your points ÷ the points of all qualified holders.
 - From then on, you receive that share of **everything** TaxBridge sends to the Loyalty Vault, now and in the future.
 - Rewards are paid **only in TRUST**. You claim them yourself. What you do with them afterwards is up to you.
+- **No identity check to buy, hold or trade TRUST — ever.**
 
 ---
 
@@ -97,7 +98,7 @@ For any reward amount you want to assume:
 
 - Rewards are held in the **CumulativeImmutableLoyaltyVault**, deployed near month 50. Its address will be published here.
 - You **claim** your rewards yourself. Nothing is pushed to your wallet automatically.
-- Claiming requires a one-time **KYC** check for that Vault. This is what makes one person = one claim.
+- **No identity check to buy, hold or trade TRUST — ever.** Only when you claim from the Loyalty Vault, a one-time verification confirms one person = one claim. The exact provider and process will be published together with the Vault.
 - Rewards are paid **only in TRUST**. Swap, hold or use them however you like — after you claim, they are yours.
 - **Stay active.** If a wallet does not claim (or check in with a zero-amount claim) for **3 years**, its unclaimed rewards are forfeited to the charity hub.
 

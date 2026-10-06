@@ -275,8 +275,8 @@ strong { color: var(--text); font-weight: 500; }
     </div>
     <p>The Vault will store every holder's cumulative share via a single Merkle Root sealed at snapshot. Formula: <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">claimable = (totalReceived × shares[address] / totalShares) − claimed[address]</code></p>
     <p>Claim — or simply check in with a zero-amount claim — at least once every 3 years. A wallet silent for 3 years forfeits its unclaimed rewards to the Charity Hub. <strong>Lost keys do not lock value forever — it goes to charity.</strong></p>
-    <p>Rewards are paid only in TRUST and claimed by the holder after a one-time KYC check. Full rules: <a href="TRUSTCOIN_LOYALTY_REWARDS.md">Loyalty Rewards</a>.</p>
-    <p>After <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">renounceOwnership()</code> — no one is in the system. Not the deployer. Not the Architect. Mathematics alone. The only remaining role is the KYC signer: it can confirm a claimant, never move or redirect funds.</p>
+    <p>Rewards are paid only in TRUST and claimed by the holder. Full rules: <a href="TRUSTCOIN_LOYALTY_REWARDS.md">Loyalty Rewards</a>.</p>
+    <p>After <code style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-pale);background:rgba(201,168,76,0.07);padding:2px 6px;">renounceOwnership()</code> — no one is in the system. Not the deployer. Not the Architect. Mathematics alone. The only remaining role is the claim verifier: it can confirm a claimant, never move or redirect funds.</p>
   </section>
 
   <div class="rule"></div>

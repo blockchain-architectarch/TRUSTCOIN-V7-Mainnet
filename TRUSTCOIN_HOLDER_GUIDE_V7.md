@@ -11,12 +11,16 @@ independent record as a personal backup. We maintain our registry. You
 must maintain yours.
 
 ## What to Record Immediately
+Record this for **every purchase** — each top-up is a separate lot with its own G.
+
 - **TX Hash:** Your transaction hash (from Etherscan/wallet)
 - **Date & Time:** Transaction timestamp in UTC
-- **Entry Cycle:** Counted from cycle 1 (October 2026)
-- **G-Coefficient:** Your fixed multiplier determined at entry (see [TRUSTCOIN_COEFFICIENT_G.md](TRUSTCOIN_COEFFICIENT_G.md))
+- **Cycle:** The number of `monthlyRelease()` calls executed before your purchase (cycle 1 began September 20, 2026). Check the latest `MonthlyReleaseExecuted` event on the token's Etherscan page.
+- **G-Coefficient:** The G of that cycle (see [TRUSTCOIN_COEFFICIENT_G.md](TRUSTCOIN_COEFFICIENT_G.md))
 - **Wallet Address:** The exact address used for the purchase
-- **Amount:** Total TRUST tokens purchased
+- **Amount:** TRUST tokens bought in this purchase
+
+Never send TRUST out of this wallet — one outbound transfer removes it from the programme forever. Full rules: [TRUSTCOIN_LOYALTY_REWARDS.md](TRUSTCOIN_LOYALTY_REWARDS.md).
 
 ## How to Store It
 - **Write it on paper** and keep it in a secure location
@@ -43,5 +47,5 @@ renounced.
 [Action Flow]
 Buy TRUST → Open Etherscan → Record Data (Hash/Date/Cycle/G-Coeff/Wallet/Amount)
 → Store (Paper + Screenshot) → Hold through cycle 50 → Claim once the
-Loyalty Vault deploys.
+Loyalty Vault deploys → Claim or check in at least every 3 years.
 ```
