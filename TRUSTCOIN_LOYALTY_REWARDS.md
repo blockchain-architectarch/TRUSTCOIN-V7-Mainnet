@@ -98,7 +98,7 @@ For any reward amount you want to assume:
 
 - Rewards are held in the **CumulativeImmutableLoyaltyVault**, deployed near month 50. Its address will be published here.
 - You **claim** your rewards yourself. Nothing is pushed to your wallet automatically.
-- **No identity check to buy, hold or trade TRUST — ever.** Only when you claim from the Loyalty Vault, a one-time verification confirms one person = one claim. The exact provider and process will be published together with the Vault.
+- How the Loyalty Vault works will be announced several months before it launches.
 - Rewards are paid **only in TRUST**. Swap, hold or use them however you like — after you claim, they are yours.
 - **Stay active.** If a wallet does not claim (or check in with a zero-amount claim) for **3 years**, its unclaimed rewards are forfeited to the charity hub.
 
@@ -106,7 +106,7 @@ For any reward amount you want to assume:
 
 ## 6. What is guaranteed — and what is not
 
-| Guaranteed by code | Not guaranteed by anyone |
+| Fixed by code and the public snapshot script | Not guaranteed by anyone |
 |---|---|
 | The entry threshold and the No-Sale rule | The price of TRUST |
 | The G-table and how points are calculated | Trading volume |
